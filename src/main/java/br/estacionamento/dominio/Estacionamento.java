@@ -19,6 +19,6 @@ public class Estacionamento {
     }
 
     public Ticket registrarSaida(Integer codigo) {
-
+        return null;
     }
 }
