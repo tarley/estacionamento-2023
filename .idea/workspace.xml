@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="210ec807-d781-44f7-9f9e-0824e0a28086" name="Changes" comment="">
+    <list default="true" id="210ec807-d781-44f7-9f9e-0824e0a28086" name="Changes" comment="feat: Implementa métodos de registro de entrada/saída e getHoras/getValor na classe Ticket&#10;&#10;Nesta aula de 27/10, adicionamos os métodos de registro de entrada/saída, bem como otimizamos o código de getValor. No entanto, o getValor agora inclui aninhamentos complexos de condicionais. Qualquer alteração nessa lógica exigirá testes abrangentes em todas as opções de cálculo de estacionamento.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/estacionamento/dominio/calculos/CalculoStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/estacionamento/dominio/calculos/CalculoVeiculoCarga.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/estacionamento/dominio/calculos/CalculoVeiculoComum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/estacionamento/dominio/Estacionamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/estacionamento/dominio/Estacionamento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/estacionamento/dominio/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/estacionamento/dominio/Ticket.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,6 +20,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>

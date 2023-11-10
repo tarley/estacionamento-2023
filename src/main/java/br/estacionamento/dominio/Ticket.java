@@ -1,5 +1,7 @@
 package br.estacionamento.dominio;
 
+import br.estacionamento.dominio.calculos.CalculoStrategy;
+
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -9,6 +11,8 @@ public class Ticket {
     private LocalDateTime entrada;
     private LocalDateTime saida;
     private Veiculo veiculo;
+
+    private CalculoStrategy calculo;
 
     public Ticket() {
     }
@@ -27,21 +31,7 @@ public class Ticket {
     public double getValor() {
         var horas = getHoras();
 
-        if(veiculo instanceof Veiculo) {
-            if(horas < 12) {
-                return horas * 2.0;
-            } else if(horas < 24) {
-                return 50.0;
-            } else if(horas < 24 * 15) {
-                return horas / 24 * 50.0;
-            } else {
-                return 250.0;
-            }
-        } else if(veiculo instanceof VeiculoCarga) {
-
-        }
-
-        return 0.0;
+        return calculo.calcular(horas);
     }
 
     public Integer getCodigo() {
@@ -74,6 +64,14 @@ public class Ticket {
 
     public void setVeiculo(Veiculo veiculo) {
         this.veiculo = veiculo;
+    }
+
+    public CalculoStrategy getCalculo() {
+        return calculo;
+    }
+
+    public void setCalculo(CalculoStrategy calculo) {
+        this.calculo = calculo;
     }
 
     @Override
