@@ -1,17 +1,23 @@
 package br.estacionamento.dominio;
 
 import br.estacionamento.dominio.calculos.CalculoStrategy;
+import jakarta.persistence.*;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+@Entity
 public class Ticket {
+    @Id
     private Integer codigo;
     private LocalDateTime entrada;
     private LocalDateTime saida;
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "num_placa")
     private Veiculo veiculo;
 
+    @Transient
     private CalculoStrategy calculo;
 
     public Ticket() {

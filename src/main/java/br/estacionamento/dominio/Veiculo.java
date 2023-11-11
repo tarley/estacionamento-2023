@@ -1,8 +1,17 @@
 package br.estacionamento.dominio;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 import java.util.Objects;
 
+@Entity
+@Table(name = "tbl_veiculo")
 public class Veiculo {
+    @Id
+    @Column(name = "num_placa", unique = true)
     private String placa;
 
     public Veiculo() {
