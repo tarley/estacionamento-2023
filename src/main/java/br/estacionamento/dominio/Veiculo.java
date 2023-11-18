@@ -1,10 +1,8 @@
 package br.estacionamento.dominio;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -13,6 +11,11 @@ public class Veiculo {
     @Id
     @Column(name = "num_placa", unique = true)
     private String placa;
+
+
+    @OneToMany(mappedBy = "veiculo")
+    @JoinColumn(name = "num_placa")
+    private List<Ticket> tickets;
 
     public Veiculo() {
     }
@@ -27,6 +30,14 @@ public class Veiculo {
 
     public void setPlaca(String placa) {
         this.placa = placa;
+    }
+
+    public List<Ticket> getTickets() {
+        return tickets;
+    }
+
+    public void setTickets(List<Ticket> tickets) {
+        this.tickets = tickets;
     }
 
     @Override
